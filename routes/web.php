@@ -21,3 +21,24 @@ Route::get('home', function () {
 	$data['jk'] = 1;
 	return view('admin.home.index', $data);
 });
+
+Route::get('user/{id}/{name}', function ($id,$name) {
+	return 'User '.$id.' Nama '.$name;
+});
+
+Route::get('user/{name?}', function ($name = 'John') {
+	return $name;
+});
+
+Route::prefix('admine')->group(function () {
+    Route::get('users', function () {
+        // Matches The "/admin/users" URL
+        echo "this is admin/users";
+    });
+});
+
+Route::prefix('admin')->group(function () {
+    Route::get('santri', 'Admin\Santri@index');
+    Route::get('santri/create', 'Admin\Santri@create');
+    Route::post('santri', 'Admin\Santri@store');
+});
