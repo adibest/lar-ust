@@ -39,8 +39,8 @@ Route::prefix('admine')->group(function () {
 
 Route::prefix('admin')->group(function () {
     Route::get('santri', 'Admin\Santri@index');
-    Route::get('santri/create', 'Admin\Santri@create');
-    Route::post('santri', 'Admin\Santri@store');
+    Route::get('santri/create', 'Admin\Santri@create');// display a form for the user to create a new blog post
+    Route::post('santri', 'Admin\Santri@store');//store the new blog post in the database.
     Route::get('santri/{id}/edit', 'Admin\Santri@edit');
     Route::put('santri', 'Admin\Santri@update');
     Route::delete('santri/{id}/delete', 'Admin\Santri@delete');

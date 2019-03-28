@@ -1,15 +1,23 @@
 @extends('layouts.app')
 
+@section('title', 'Santri')
+
 @section('contentheader')
-<section class="content-header">
+    @if ($message = Session::get('success'))
+          <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button> 
+              <strong>{{ $message }}</strong>
+          </div>
+    @endif
+    <section class="content-header">
       <h1>
-        Blank page
+        Daftar Santri
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+        <li><a href="#">Santri</a></li>
+        <li class="active">Daftar Santri</li>
       </ol>
     </section>
 @endsection
@@ -17,7 +25,7 @@
 @section('content')
    <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
+          <h3 class="box-title">Data Santri</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -36,6 +44,7 @@
           		<th>Email</th>
           		<th>Gender</th>
           		<th>Created At</th>
+              <th>Update At</th>
           		<th>Action</th>
           	</tr>
           	@php
@@ -48,6 +57,7 @@
           			<td>{{ $row->email }}</td>
           			<td>{{ ($row->gender)?'Laki-laki':'Perempuan' }}</td>
           			<td>{{ $row->created_at }}</td>
+                <td>{{ $row->updated_at }}</td>
           			<td>
           				<form action="{{ url('admin/santri/'.$row->id.'/delete') }}" method="post">
           				<a href="{{ url('admin/santri/'.$row->id.'/edit') }}" class="btn btn-primary btn-xs">Edit</a>

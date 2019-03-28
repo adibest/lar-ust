@@ -22,6 +22,18 @@ class Santri extends Controller
 
     public function store(Request $request)
     {
+        $messages           = [
+            'required'  => 'mohon :attribute di isi yang sayang',
+            'min'       => 'isilah :attribute minimal :min karakter',
+            'max'       => ':attribute maksimal :max karakter to',
+        ];
+        $validateData       = $request->validate([
+            'nama'      => 'required|min:5|max:25',
+            'email'     => 'required',
+            'gender'    => 'required',
+            'password'  => 'required|min:5',
+        ],$messages);
+
     	$santri 			= new SantriModel;
     	$santri->nama 		= $request->nama;
     	$santri->email 		= $request->email;
@@ -41,6 +53,18 @@ class Santri extends Controller
 
     public function update(Request $request)
     {
+        $messages           = [
+            'required'  => 'mohon :attribute di isi yang sayang',
+            'min'       => 'isilah :attribute minimal :min karakter',
+            'max'       => ':attribute maksimal :max karakter to',
+        ];
+        $validateData       = $request->validate([
+            'nama'      => 'required|min:5|max:25',
+            'email'     => 'required',
+            'gender'    => 'required',
+            'password'  => 'required|min:5',
+        ],$messages);
+        
     	$id 				= $request->id;
     	$santri 			= SantriModel::find($id);
     	$santri->nama 		= $request->nama;
