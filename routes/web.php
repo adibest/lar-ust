@@ -41,4 +41,7 @@ Route::prefix('admin')->group(function () {
     Route::get('santri', 'Admin\Santri@index');
     Route::get('santri/create', 'Admin\Santri@create');
     Route::post('santri', 'Admin\Santri@store');
+    Route::get('santri/{id}/edit', 'Admin\Santri@edit');
+    Route::put('santri', 'Admin\Santri@update');
+    Route::delete('santri/{id}/delete', 'Admin\Santri@delete');
 });
