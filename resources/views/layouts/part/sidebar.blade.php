@@ -35,7 +35,7 @@
             <li><a href="{{asset('adminlte/index2.html')}}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
         </li>
-        <li>
+        <li class="{{ Request::is('admin/santri') ? 'active' : '' }}">
           <a href="{{ url('admin/santri') }}">
             <i class="fa fa-th"></i> <span>Santri</span>
             <span class="pull-right-container">
@@ -43,7 +43,7 @@
             </span>
           </a>
         </li>
-        <li>
+        <li class="{{ Request::is('admin/guru') ? 'active' : '' }}">
           <a href="{{ url('admin/guru') }}">
             <i class="fa fa-bank"></i> <span>Guru</span>
             <span class="pull-right-container">
