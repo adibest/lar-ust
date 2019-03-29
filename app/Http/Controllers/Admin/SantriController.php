@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\SantriModel;
 use App\Http\Controllers\Controller;
 
-class Santri extends Controller
+class SantriController extends Controller
 {
 	public $folder = 'admin.santri';
     public function index()
@@ -78,7 +78,7 @@ class Santri extends Controller
 
     public function delete($id)
     {
-    	$santru = SantriModel::find($id)->delete();
+    	$santri = SantriModel::find($id)->delete();
     	return redirect('admin/santri')->with('success', 'Data berhasil dihapus');
     }
 }

@@ -43,5 +43,13 @@
             </span>
           </a>
         </li>
+        <li>
+          <a href="{{ url('admin/guru') }}">
+            <i class="fa fa-bank"></i> <span>Guru</span>
+            <span class="pull-right-container">
+              
+            </span>
+          </a>
+        </li>
       </ul>
     </section>

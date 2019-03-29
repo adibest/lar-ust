@@ -38,10 +38,17 @@ Route::prefix('admine')->group(function () {
 });
 
 Route::prefix('admin')->group(function () {
-    Route::get('santri', 'Admin\Santri@index');
-    Route::get('santri/create', 'Admin\Santri@create');// display a form for the user to create a new blog post
-    Route::post('santri', 'Admin\Santri@store');//store the new blog post in the database.
-    Route::get('santri/{id}/edit', 'Admin\Santri@edit');
-    Route::put('santri', 'Admin\Santri@update');
-    Route::delete('santri/{id}/delete', 'Admin\Santri@delete');
+    Route::get('santri', 'Admin\SantriController@index');
+    Route::get('santri/create', 'Admin\SantriController@create');// display a form for the user to create a new blog post
+    Route::post('santri', 'Admin\SantriController@store');//store the new blog post in the database.
+    Route::get('santri/{id}/edit', 'Admin\SantriController@edit');
+    Route::put('santri', 'Admin\SantriController@update');
+    Route::delete('santri/{id}/delete', 'Admin\SantriController@delete');
+
+    Route::get('guru', 'Admin\GuruController@index');
+    Route::get('guru/create', 'Admin\GuruController@create');
+    Route::post('guru', 'Admin\GuruController@store');
+    Route::get('guru/{id}/edit', 'Admin\GuruController@edit');
+    Route::put('guru', 'Admin\GuruController@update');
+    Route::delete('guru/{id}/delete', 'Admin\GuruController@delete');
 });
