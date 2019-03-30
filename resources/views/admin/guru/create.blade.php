@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Tambah guru')
+@section('title', 'Tambah Guru')
 
 @section('contentheader')
   <section class="content-header">
         <h1>
-          Tambah guru
+          Tambah Guru
           <small>it all starts here</small>
         </h1>
         <ol class="breadcrumb">
           <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="#">guru</a></li>
-          <li class="active">Tambah guru</li>
+          <li><a href="#">Guru</a></li>
+          <li class="active">Tambah Guru</li>
         </ol>
   </section>
 @endsection
@@ -19,7 +19,7 @@
 @section('content')
    <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Tambah Data guru</h3>
+          <h3 class="box-title">Tambah Data Guru</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"

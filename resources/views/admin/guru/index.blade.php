@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'guru')
+@section('title', 'Guru')
 
 @section('contentheader')
     @if ($message = Session::get('success'))
@@ -11,13 +11,13 @@
     @endif
     <section class="content-header">
       <h1>
-        Daftar guru
+        Daftar Guru
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">guru</a></li>
-        <li class="active">Daftar guru</li>
+        <li><a href="#">Guru</a></li>
+        <li class="active">Daftar Guru</li>
       </ol>
     </section>
 @endsection
@@ -25,7 +25,7 @@
 @section('content')
    <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Data guru</h3>
+          <h3 class="box-title">Data Guru</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -71,7 +71,7 @@
           			</td>
           		</tr>
           	@endforeach
-       		{{$guru->links()}}
+       		{{-- {{$guru->links()}} --}}
           </table>
         </div>
         <!-- /.box-body -->

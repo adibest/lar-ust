@@ -69,7 +69,7 @@
           			</td>
           		</tr>
           	@endforeach
-       		{{$santri->links()}}
+       		{{-- {{$santri->links()}} --}}
           </table>
         </div>
         <!-- /.box-body -->
