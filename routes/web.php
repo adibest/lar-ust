@@ -38,6 +38,10 @@ Route::prefix('admine')->group(function () {
 });
 
 Route::prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.home.index');
+    });
+
     Route::get('santri', 'Admin\SantriController@index');
     Route::get('santri/create', 'Admin\SantriController@create');// display a form for the user to create a new blog post
     Route::post('santri', 'Admin\SantriController@store');//store the new blog post in the database.

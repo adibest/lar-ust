@@ -23,7 +23,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
@@ -34,6 +34,14 @@
             <li><a href="{{asset('adminlte/index.html')}}"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li><a href="{{asset('adminlte/index2.html')}}"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
+        </li> --}}
+        <li class="{{ Request::is('admin') ? 'active' : '' }}">
+          <a href="{{ url('admin') }}">
+            <i class="fa fa-home"></i> <span>Home</span>
+            <span class="pull-right-container">
+              
+            </span>
+          </a>
         </li>
         <li class="{{ Request::is('admin/santri') ? 'active' : '' }}">
           <a href="{{ url('admin/santri') }}">
