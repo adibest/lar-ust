@@ -73,12 +73,12 @@
               <div class="col-sm-10">
                 <div class="radio">
                   <label>
-                    <input type="radio" name="gender" id="optionsRadios2" value="1" {{ ($guru->gender)?'checked':'' }}> Laki-laki
+                    <input type="radio" name="gender" id="optionsRadios2" value="L" {{ ($guru->gender)?'checked':'' }}> Laki-laki
                   </label>
                 </div>
                 <div class="radio">
                   <label>
-                    <input type="radio" name="gender" id="optionsRadios2" value="0" {{ ($guru->gender)?'':'checked' }}> Perempuan
+                    <input type="radio" name="gender" id="optionsRadios2" value="P" {{ ($guru->gender)?'':'checked' }}> Perempuan
                   </label>
                 </div>
                 @foreach ($errors->get('gender') as $message)

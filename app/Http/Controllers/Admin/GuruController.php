@@ -29,7 +29,7 @@ class GuruController extends Controller
         ];
         $validateData       = $request->validate([
             'nama'      => 'required|min:5|max:20',
-            'email'     => 'required|max:30',
+            'email'     => 'required|max:30|email|unique:guru,email',
             'gender'    => 'required',
             'nip'  		=> 'required|min:15|max:20',
             'phone'		=> 'required|max:14',
@@ -55,20 +55,23 @@ class GuruController extends Controller
 
     public function update(Request $request)
     {
+
     	$messages           = [
             'required'  => 'mohon :attribute di isi yang sayang',
             'min'       => 'isilah :attribute minimal :min karakter',
             'max'       => ':attribute maksimal :max karakter to',
         ];
+
+        $id                 = $request->id;
+
         $validateData       = $request->validate([
             'nama'      => 'required|min:5|max:20',
-            'email'     => 'required|max:30',
+            'email'     => 'required|max:30|email|unique:guru,email,'.$id,
             'gender'    => 'required',
             'nip'  		=> 'required|min:15|max:20',
             'phone'		=> 'required|max:14',
         ],$messages);
 
-        $id 				= $request->id;
         $guru 				= GuruModel::find($id);
         $guru->nama			= $request->nama;
         $guru->nip			= $request->nip;
