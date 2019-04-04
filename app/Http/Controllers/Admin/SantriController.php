@@ -64,10 +64,10 @@ class SantriController extends Controller
 
         $id                 = $request->id;
         $validateData       = $request->validate([
-            'nama'      => 'required|min:5|max:25',
+            'nama'      => 'required|min:5|max:40',
             'email'     => 'required|max:30|email|unique:santri,email,'.$id,
             'gender'    => 'required',
-            'password'  => 'required|min:5',
+            'password'  => 'nullable|min:5',
         ],$messages);
         
     	// $santri 			= SantriModel::find($id);

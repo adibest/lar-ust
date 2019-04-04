@@ -18,7 +18,7 @@ class ProvinsiTableSeeder extends Seeder
         for ($i=0; $i < 15; $i++) { 
         	
         	$data[$i] = [
-        		'nama'		=> $faker->sentence(1),
+        		'nama'		=> $faker->word,
         		'created_at'    => now(),
                 'updated_at'    => now(),
         	];

@@ -43,7 +43,7 @@
             </span>
           </a>
         </li>
-        <li class="{{ Request::is('admin/santri') ? 'active' : '' }}">
+        <li class="{{ Request::is('admin/santri') || Request::is('admin/santri/*') ? 'active' : '' }}">
           <a href="{{ url('admin/santri') }}">
             <i class="fa fa-th"></i> <span>Santri</span>
             <span class="pull-right-container">
@@ -51,7 +51,7 @@
             </span>
           </a>
         </li>
-        <li class="{{ Request::is('admin/guru') ? 'active' : '' }}">
+        <li class="{{ Request::is('admin/guru') || Request::is('admin/guru/*') ? 'active' : '' }}">
           <a href="{{ url('admin/guru') }}">
             <i class="fa fa-bank"></i> <span>Guru</span>
             <span class="pull-right-container">
@@ -59,7 +59,7 @@
             </span>
           </a>
         </li>
-        <li class="{{ Request::is('admin/provinsi') ? 'active' : '' }}">
+        <li class="{{ Request::is('admin/provinsi') || Request::is('admin/provinsi/*') ? 'active' : '' }}">
           <a href="{{ url('admin/provinsi') }}">
             <i class="fa fa-map"></i> <span>Provinsi</span>
             <span class="pull-right-container">
