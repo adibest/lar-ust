@@ -59,5 +59,13 @@
             </span>
           </a>
         </li>
+        <li class="{{ Request::is('admin/provinsi') ? 'active' : '' }}">
+          <a href="{{ url('admin/provinsi') }}">
+            <i class="fa fa-map"></i> <span>Provinsi</span>
+            <span class="pull-right-container">
+              
+            </span>
+          </a>
+        </li>
       </ul>
     </section>

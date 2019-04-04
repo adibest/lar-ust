@@ -55,4 +55,11 @@ Route::prefix('admin')->group(function () {
     Route::get('guru/{id}/edit', 'Admin\GuruController@edit');
     Route::put('guru', 'Admin\GuruController@update');
     Route::delete('guru/{id}/delete', 'Admin\GuruController@delete');
+
+    Route::get('provinsi', 'Admin\ProvinsiController@index');
+    Route::get('provinsi/create', 'Admin\ProvinsiController@create');
+    Route::post('provinsi', 'Admin\ProvinsiController@store');
+    Route::get('provinsi/{id}/edit', 'Admin\ProvinsiController@edit');
+    Route::put('provinsi', 'Admin\ProvinsiController@update');
+    Route::delete('provinsi/{id}/delete', 'Admin\ProvinsiController@delete');
 });

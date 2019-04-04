@@ -11,7 +11,7 @@ class GuruController extends Controller
     public $folder = 'admin.guru';
     public function index()
     {
-    	$data['guru'] = GuruModel::orderBy('id')->get();
+    	$data['guru'] = GuruModel::orderBy('created_at', 'desc')->get();
     	return view ($this->folder.'.index', $data);
     }
 

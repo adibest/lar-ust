@@ -31,6 +31,6 @@ class CreateGuruModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guru_models');
+        Schema::dropIfExists('guru');
     }
 }

@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Model\SantriModel;
 use App\Http\Controllers\Controller;
+use App\Model\SantriModel;
+use App\Model\Provinsi;
 
 class SantriController extends Controller
 {
@@ -66,7 +67,7 @@ class SantriController extends Controller
             'nama'      => 'required|min:5|max:25',
             'email'     => 'required|max:30|email|unique:santri,email,'.$id,
             'gender'    => 'required',
-            'password'  => 'sometimes|required|min:5',
+            'password'  => 'required|min:5',
         ],$messages);
         
     	// $santri 			= SantriModel::find($id);

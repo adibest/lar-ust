@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Santri')
+@section('title', 'Provinsi')
 
 @section('contentheader')
     @if ($message = Session::get('success'))
@@ -11,13 +11,13 @@
     @endif
     <section class="content-header">
       <h1>
-        Daftar Santri
+        Daftar Provinsi
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Santri</a></li>
-        <li class="active">Daftar Santri</li>
+        <li><a href="#">Provinsi</a></li>
+        <li class="active">Daftar Provinsi</li>
       </ol>
     </section>
 @endsection
@@ -25,7 +25,7 @@
 @section('content')
    <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Data Santri</h3>
+          <h3 class="box-title">Data Provinsi</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
@@ -41,26 +41,22 @@
           	<tr>
           		<th style="width: 10px">No</th>
           		<th>Nama</th>
-          		<th>Email</th>
-          		<th>Gender</th>
           		<th>Created At</th>
-              <th>Provinsi</th>
+              <th>Update At</th>
           		<th>Action</th>
           	</tr>
           	@php
           	$nomor = 1;
           	@endphp
-          	@foreach($santri as $row)
+          	@foreach($provinsi as $row)
           		<tr>
           			<td>{{ $nomor++ }}</td>
           			<td>{{ $row->nama }}</td>
-          			<td>{{ $row->email }}</td>
-          			<td>{{ ($row->gender)?'Laki-laki':'Perempuan' }}</td>
           			<td>{{ $row->created_at }}</td>
-                <td>{{ $row->provinsi_id }}</td>
+                <td>{{ $row->updated_at }}</td>
           			<td>
-          				<form action="{{ url('admin/santri/'.$row->id.'/delete') }}" method="post">
-          				<a href="{{ url('admin/santri/'.$row->id.'/edit') }}" class="btn btn-primary btn-xs">Edit</a>
+          				<form action="{{ url('admin/provinsi/'.$row->id.'/delete') }}" method="post">
+          				<a href="{{ url('admin/provinsi/'.$row->id.'/edit') }}" class="btn btn-primary btn-xs">Edit</a>
           					@csrf
           					@method('DELETE')
           					<button type="submit" class="btn btn-danger btn-xs">DELETE</button>
@@ -74,7 +70,7 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer">
-          <a href="{{ url('admin/santri/create') }}" class="btn btn-primary pull-right">Create</a>
+          <a href="{{ url('admin/provinsi/create') }}" class="btn btn-primary pull-right">Create</a>
         </div>
         <!-- /.box-footer-->
       </div>
