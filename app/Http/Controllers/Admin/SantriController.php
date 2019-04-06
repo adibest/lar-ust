@@ -12,8 +12,9 @@ class SantriController extends Controller
 	public $folder = 'admin.santri';
     public function index()
     {
-    	$data['santri'] = SantriModel::orderBy('id', 'desc')->get();
-    	return view ($this->folder.'.index', $data);
+    	$data = SantriModel::orderBy('created_at', 'desc')->get();
+
+    	return view ($this->folder.'.index', compact('data'));
     }
 
     public function create()

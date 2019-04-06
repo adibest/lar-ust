@@ -50,17 +50,17 @@
           	@php
           	$nomor = 1;
           	@endphp
-          	@foreach($santri as $row)
+          	@foreach($data as $santri)
           		<tr>
           			<td>{{ $nomor++ }}</td>
-          			<td>{{ $row->nama }}</td>
-          			<td>{{ $row->email }}</td>
-          			<td>{{ ($row->gender)?'Laki-laki':'Perempuan' }}</td>
-          			<td>{{ $row->created_at }}</td>
-                <td>{{ $row->provinsi_id }}</td>
+          			<td>{{ $santri->nama }}</td>
+          			<td>{{ $santri->email }}</td>
+          			<td>{{ ($santri->gender)?'Laki-laki':'Perempuan' }}</td>
+          			<td>{{ $santri->created_at }}</td>
+                <td>{{ $santri->provinsi_id }}</td>
           			<td>
-          				<form action="{{ url('admin/santri/'.$row->id.'/delete') }}" method="post">
-          				<a href="{{ url('admin/santri/'.$row->id.'/edit') }}" class="btn btn-primary btn-xs">Edit</a>
+          				<form action="{{ url('admin/santri/'.$santri->id.'/delete') }}" method="post">
+          				<a href="{{ url('admin/santri/'.$santri->id.'/edit') }}" class="btn btn-primary btn-xs">Edit</a>
           					@csrf
           					@method('DELETE')
           					<button type="submit" class="btn btn-danger btn-xs">DELETE</button>
