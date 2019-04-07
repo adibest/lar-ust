@@ -12,6 +12,7 @@ class ProvinsiController extends Controller
     public function index()
     {
     	$data['provinsi'] = Provinsi::orderBy('created_at', 'desc')->get();
+        
     	return view ($this->folder.'.index', $data);
     }
 

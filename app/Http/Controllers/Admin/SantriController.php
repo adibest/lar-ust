@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\SantriModel;
+use App\Model\Santri;
 use App\Model\Provinsi;
 
 class SantriController extends Controller
@@ -12,7 +12,7 @@ class SantriController extends Controller
 	public $folder = 'admin.santri';
     public function index()
     {
-    	$data = SantriModel::orderBy('created_at', 'desc')->get();
+    	$data = Santri::orderBy('created_at', 'desc')->get();
 
     	return view ($this->folder.'.index', compact('data'));
     }
@@ -33,24 +33,25 @@ class SantriController extends Controller
             'nama'      => 'required|min:5|max:25',
             'email'     => 'required|max:30|email|unique:santri,email',
             'gender'    => 'required',
+            'provinsi_id'    => 'required',
             'password'  => 'required|min:5',
         ],$messages);
 
-    	// $santri 			= new SantriModel;
+    	// $santri 			= new Santri;
     	// $santri->nama 		= $request->nama;
     	// $santri->email 		= $request->email;
     	// $santri->gender 	= $request->gender;
     	// $santri->password 	= bcrypt($request->password);
     	// $santri->save();
 
-        $santri = SantriModel::create($request->all());
+        $santri = Santri::create($request->all());
 
     	return redirect('admin/santri')->with('success', 'Data berhasil diinput');
     }
 
     public function edit($id)
     {
-    	$santri 			= SantriModel::find($id);
+    	$santri 			= Santri::find($id);
 
     	return view($this->folder.'.edit', compact('santri'));
     }
@@ -68,24 +69,25 @@ class SantriController extends Controller
             'nama'      => 'required|min:5|max:40',
             'email'     => 'required|max:30|email|unique:santri,email,'.$id,
             'gender'    => 'required',
+            'provinsi_id'    => 'required',
             'password'  => 'nullable|min:5',
         ],$messages);
         
-    	// $santri 			= SantriModel::find($id);
+    	// $santri 			= Santri::find($id);
     	// $santri->nama 		= $request->nama;
     	// $santri->email 		= $request->email;
     	// $santri->gender 	= $request->gender;
     	// $santri->password 	= bcrypt($request->password);
     	// $santri->save();
 
-        SantriModel::find($id)->update($request->all());
+        Santri::find($id)->update($request->all());
 
     	return redirect('admin/santri')->with('success', 'Data berhasil diedit');
     }
 
     public function delete($id)
     {
-    	$santri = SantriModel::find($id)->delete();
+    	$santri = Santri::find($id)->delete();
     	return redirect('admin/santri')->with('success', 'Data berhasil dihapus');
     }
 }

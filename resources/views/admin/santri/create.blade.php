@@ -75,6 +75,19 @@
                 @endforeach
 	          	</div>
           	</div>
+            {{-- <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Provinsi</label>
+              <div class="col-sm-10">
+                <select name="provinsi_id">
+                  <option value="{{ $santri->id }}">{{ $santri->nama }}</option>
+                </select>
+                @foreach ($errors->get('provinsi_id') as $message)
+                <div class="text text-danger">
+                  {{ $message }}
+                </div>
+                @endforeach
+              </div>
+            </div> --}}
           	<div class="form-group">
           		<label for="inputEmail3" class="col-sm-2 control-label">Password</label>
           		<div class="col-sm-10"> 

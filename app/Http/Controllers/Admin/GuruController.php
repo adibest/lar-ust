@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Model\GuruModel;
+use App\Model\Guru;
 use App\Http\Controllers\Controller;
 
 class GuruController extends Controller
@@ -11,7 +11,7 @@ class GuruController extends Controller
     public $folder = 'admin.guru';
     public function index()
     {
-    	$data['guru'] = GuruModel::orderBy('created_at', 'desc')->get();
+    	$data['guru'] = Guru::orderBy('created_at', 'desc')->get();
     	return view ($this->folder.'.index', $data);
     }
 
@@ -35,7 +35,7 @@ class GuruController extends Controller
             'phone'		=> 'required|max:14',
         ],$messages);
 
-        $guru 				= new GuruModel;
+        $guru 				= new Guru;
         $guru->nama			= $request->nama;
         $guru->nip			= $request->nip;
         $guru->gender		= $request->gender;
@@ -48,7 +48,7 @@ class GuruController extends Controller
 
     public function edit($id)
     {
-    	$guru 				= GuruModel::find($id);
+    	$guru 				= Guru::find($id);
 
     	return view($this->folder.'.edit', compact('guru'));
     }
@@ -72,7 +72,7 @@ class GuruController extends Controller
             'phone'		=> 'required|max:14',
         ],$messages);
 
-        $guru 				= GuruModel::find($id);
+        $guru 				= Guru::find($id);
         $guru->nama			= $request->nama;
         $guru->nip			= $request->nip;
         $guru->gender		= $request->gender;
@@ -85,7 +85,7 @@ class GuruController extends Controller
 
     public function delete($id)
     {
-    	$guru = GuruModel::find($id)->delete();
+    	$guru = Guru::find($id)->delete();
     	return redirect('admin/guru')->with('success', 'Data berhasil dihapus');
     }
 }

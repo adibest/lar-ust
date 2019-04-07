@@ -14,6 +14,6 @@ class Provinsi extends Model
 
     public function santri()
     {
-    	return $this->belongsTo(SantriModel::class, 'provinsi_id');
+    	return $this->belongsTo(Santri::class, 'provinsi_id');
     }
 }

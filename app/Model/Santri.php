@@ -4,7 +4,7 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class SantriModel extends Model
+class Santri extends Model
 {
     protected $table = 'santri';
 
