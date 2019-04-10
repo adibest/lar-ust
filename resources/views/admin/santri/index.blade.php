@@ -57,7 +57,7 @@
           			<td>{{ $santri->email }}</td>
           			<td>{{ ($santri->gender)?'Laki-laki':'Perempuan' }}</td>
           			<td>{{ $santri->created_at }}</td>
-                <td>{{ $santri->provinsi_id }}</td>
+                <td>{{ $santri->provinsi->nama }}</td>
           			<td>
           				<form action="{{ url('admin/santri/'.$santri->id.'/delete') }}" method="post">
           				<a href="{{ url('admin/santri/'.$santri->id.'/edit') }}" class="btn btn-primary btn-xs">Edit</a>
